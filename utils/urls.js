@@ -5,7 +5,7 @@
  * true  表示进入测试版  
  * false  表示进入到正式版
  */
-var  DEBUG =false;
+var  DEBUG =true;
 
 /**
  * 获取URL地址
