@@ -1,0 +1,45 @@
+<!--pages/tab/Page_More/Page_More.wxml-->
+<view>
+    <view style='margin-left:20px; margin-right:20px;'>
+        <image  src='{{imagePath +"image_about_border.png"}}' lazy-load='true' style='width:{{width}}px;position: absolute; height:170px;'></image>
+        <view class='qk_about'>
+            <image src='/images/image_qk_icon.png' style='width:50px; height:60px; margin-top:10px'></image>
+            <text class='text_default' style='margin-top:10px;'>{{about_message}}</text>
+        </view>
+    </view>
+    
+
+    <view style='margin-top:40px;'>
+       
+       <button class='about_item' data-type='2' bindtap='onItemClickList' hidden='true'>
+            <image src='/images/image_about_qk_icon.png' class='image_small'></image>
+            <view class='item_text'>
+                <text class='text_default' style='margin-left:20px;'>更改手机号</text>
+            </view>
+            <image src='/images/image_right_icon.png' class='image_small'></image>
+        </button>
+
+        <button class='about_item' data-type='1' bindtap='onItemClickList'>
+            <image src='/images/image_about_qk_icon.png' class='image_small'></image>
+            <view class='item_text'>
+                <text class='text_default' style='margin-left:20px;'>关于企酷</text>
+            </view>
+            <image src='/images/image_right_icon.png' class='image_small'></image>
+        </button>
+
+        <button class='about_item' open-type='contact'>
+            <image src='/images/image_call_me_icon.png' class='image_small'></image>
+            <view class='item_text'>
+                <text class='text_default' style='margin-left:20px;'>联系我们</text>
+            </view>
+             <image src='/images/image_right_icon.png' class='image_small'></image>
+        </button>
+        <button class='about_item' open-type='share' >
+            <image src='/images/image_share_friends_icon.png' class='image_small'></image>
+            <view class='item_text'>
+                <text class='text_default' style='margin-left:20px;'>推荐给朋友</text>
+            </view>
+            <image src='/images/image_right_icon.png' class='image_small'></image>
+        </button>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/user/business/upgrade/VIP_Level/VIP_Level.wxml-->
+
+<view>
+  <view class='vip_background' style='background-image:url("{{backgroundImage}}")'>
+    <text class='background_title'>企酷电子名片</text>
+    <text class='background_text' decode='{{true}}'>&nbsp;&nbsp;传统纸质名片作为商务拜访的敲门砖，留存率和转化率极低，而手麦电子名片围绕个人信息、公司宣传、产品宣传三个维度，全方位展示公司品牌形象。
+&nbsp;&nbsp;&nbsp;&nbsp;企酷电子名片将公司每个成员都打造成公司的一个流量入口！通过电子名片第一时间让产品触达客户，每一次传递名片都将触发后续的交易机会，一张名片一个流量入口实现全员营销。</text>
+  </view>
+
+
+  <view style='background-color: #F8F8F8;'>
+  <block wx:for='{{levelData}}' wx:key=''>
+
+      <block wx:if='{{index == 0}}'>
+        <view class='vip_levet_item' style='margin-top: 20px;'>
+        <view style='width:5px; height: 25px; background-color: #f4c322; margin-left: 20px'></view>
+        <view>
+            <text class='item_text_name' style='margin-left:10px' >个人版</text>
+        </view>
+        </view>
+      </block>
+      <block wx:elif='{{index == 2}}'>
+      <view class='vip_levet_item'>
+        <view style='width:5px; height: 25px; background-color: #27b6e2;margin-left: 20px'></view>
+        <view>
+            <text class='item_text_name' style='margin-left:10px;'>企业版</text>
+        </view>
+        </view>
+      </block>
+      <block  wx:elif='{{index != 0}}'>
+            <view>
+                <view class='view_horizontal' data-index='{{index}}' bindtap='onVipLevelClickListener'>
+                    <view>
+                        <text class='item_text_name'>{{item.name}}</text>
+                        <text class='item_text_desc'>({{item.tip}})</text>
+                    </view>
+                    <view>
+                        <image src='/images/image_right_icon.png' class='image_small'></image>
+                    </view>
+                </view>
+                <view class='view_line'></view>
+            </view>
+        </block>
+  </block>
+  </view>
+</view>

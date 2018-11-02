@@ -1,0 +1,43 @@
+/* pages/user/business/upgrade/VIP_Level/VIP_Level.wxss */
+
+.vip_background {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  
+}
+.background_title {
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+}
+.background_text {
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.vip_levet_item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(228, 228, 228, 1);
+  height: 40px;
+}
+.item_text_name {
+  font-size: 15px;
+  color: #333;
+  margin-top: 10px;
+}
+.item_text_desc {
+  font-size: 13px;
+  color: #333;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+

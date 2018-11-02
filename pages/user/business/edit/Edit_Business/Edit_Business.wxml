@@ -1,0 +1,159 @@
+<!--pages/user/business/Edit_Business/Edit_Business.wxml-->
+<view class=''>
+    <view class='view_item'>
+        <view class='view_left'>
+            <text class='view_text'>姓名:</text>
+            <image src='/images/image_important.png' style='width:12px; height:12px;'></image>
+        </view>
+        <view class='view_right'>
+            
+            <view class='view_color'></view>
+            <input class= 'view_edit' type='text' name='name' value='{{name}}' placeholder='请输入姓名'
+             data-name='name' bindblur='onInputListener'></input>
+        </view>
+    </view>
+
+    <block wx:if='{{type== -1 || id ==""}}'>
+    <view class='view_item'  wx:if='{{!isEditOther}}'>
+        <view class='view_left'>
+            <text class='view_text'>名片类型:</text>
+            <image src='/images/image_important.png' style='width:12px; height:12px;'></image>
+        </view>
+       
+        <radio-group bindchange='onCheckChengeListener'style='display:flex;'>
+            <view style='width:auto;'>
+                <radio checked='{{type == 1}}' value='1' style='transform:scale(0.7);'></radio>
+                <text class='view_text'>本人名片</text>
+            </view>
+            <view>
+                <radio checked='{{type == 0 || type ==2}}' value='0' style='transform:scale(0.7); margin-left:10px;'></radio>
+                <text class='view_text'>他人名片</text>
+            </view>
+            <view hidden='true'>
+                <radio checked='{{type == 2}}' value='2' style='transform:scale(0.7); margin-left:10px;'></radio>
+                <text class='view_text'>特别关注</text>
+            </view>
+        </radio-group> 
+  </view>
+  </block>
+  <view class='view_item' wx:if='{{!isEditOther}}'>
+        <view class='view_left'>
+            <text class='view_text'>手机号码:</text>
+             <image src='/images/image_important.png' style='width:12px; height:12px;'></image>
+        </view>
+        
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='number' confirm-type='next' placeholder='请输入手机号码'
+             name='phone' value='{{phone}}'data-name='phone' bindblur='onInputListener'></input>
+        </view>
+  </view>
+  <view class='view_item'>
+        <view class='view_left'>
+            <text class='view_text'>公司名称:</text>
+        </view>
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='text' confirm-type='next' placeholder='请输入公司名称'
+            value='{{firm_name}}' data-name='firm_name' bindblur='onInputListener'></input>
+        </view>
+    </view>
+    <view class='view_item' hidden='true'>
+        <view class='view_left'>
+            <text class='view_text'>公司官网:</text>
+        </view>
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='text' confirm-type='next' placeholder=''
+             value='{{website}}' data-name='website' bindblur='onInputListener'></input>
+        </view>
+    </view>
+    <view class='view_item'>
+        <view class='view_left'>
+            <text class='view_text'>职务:</text>
+        </view>
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='text' confirm-type='next' placeholder='请输入公司职务'
+            value='{{position}}' data-name='position' bindblur='onInputListener'></input>
+        </view>
+    </view>
+    <view class='view_item'  wx:if='{{!isEditOther}}'>
+        <view class='view_left'>
+            <text class='view_text'>邮箱:</text>
+        </view>
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='text' confirm-type='next' placeholder='请输入邮箱地址'
+             value='{{email}}' data-name='email' bindblur='onInputListener'></input>
+        </view>
+    </view>
+    <view class='view_item'  wx:if='{{!isEditOther}}'>  
+        <view class='view_left'>
+            <text class='view_text'>公司地址:</text>
+        </view>
+        <view class='view_right'>
+            <view class='view_color2'></view>
+            <input class= 'view_edit' type='text' confirm-type='next' placeholder='请输入详细地址'
+            value='{{firm_add}}' data-name='firm_add' bindblur='onInputListener'></input>
+        </view>
+    </view>
+    <view class='view_item' hidden='true' wx:for='{{name_url}}' wx:key=''  wx:if='{{!isEditOther}}'>
+        <view class='view_left' data-type='{{index}}' bindtap='onWebsiteTypeClickListener'>
+            <block wx:if='{{item.type==1}}'>
+                <text class='view_text'>官网:</text>
+            </block>
+            <block wx:elif='{{item.type ==2}}'>
+                <text class='view_text'>商城:</text>
+            </block>
+            <block wx:else>
+                <text class='view_text'>其他:</text>
+            </block>
+        </view>
+        <view class='view_item'  >
+            <view style='flex:1'>
+                <view class='view_right'>
+                    <view class='view_color2'></view>
+                    <input class= 'view_edit' type='text' placeholder='请输入名称' value='{{item.name}}' data-index='{{index}}' data-name='url-name' bindinput='onWebSiteInputListener'></input>
+                </view>
+                <view class='view_right'>
+                    <view class='view_color2'></view>
+                    <input class= 'view_edit' type='text' placeholder='请输入网址' value='{{item.url}}' data-index='{{index}}' data-name='url-website' bindinput='onWebSiteInputListener'></input>
+                </view>
+            </view>
+            <view style='margin-right:20px'>
+            <image src='/images/image_delete_website_icon.png' class='view_image' data-index='{{index}}' bindtap='onRemoveWebsiteClickListener'></image>
+            <image src='/images/image_add_website_icon.png' class='view_image'  bindtap='onAddWebsiteClickListener'></image>
+            </view>
+        </view>
+  </view>
+  <view>
+  <button class='view_default_btn'  bindtap='onSubmitBusiness'>提交</button>
+  </view>
+</view>
+
+<block wx:if='{{isShowWebsite}}'>
+    <view class="zan-dialog--show">
+        <view class="zan-dialog__mask" bindtap="toggleDialog" />
+        <view class="zan-dialog__container">
+            <view class='website_root'>
+                <view class='website_content' style='height:50px;'>
+                    <text class='text_default'>请选择网址类型</text>
+                </view>
+                <view class='view_line'></view>
+                <block  wx:for='{{websiteType}}' wx:key='' >
+                    <view class='website_content' data-type='{{index+1}}' bindtap='onClickWebTypeListener'>
+                        <text class='text_default' >{{item}}</text>
+                    </view>
+                    <block wx:if='{{index +1 != websiteType.length}}'>
+                        <view class='view_line' ></view>
+                    </block>
+                </block>
+            </view>
+            <view class='website_root' style='height:40px; margin-top:10px;' bindtap='toggleDialog'>
+                <text class='text_default'>取消</text>
+            </view>
+        </view>
+
+    </view>
+</block>

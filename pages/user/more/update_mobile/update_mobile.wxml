@@ -1,0 +1,21 @@
+<view class='view_root'>
+    
+    
+    <view class='view_grounp'>
+        <view class='view_line_h'></view>
+        <view class='view_item_root'>
+            
+            <input type='number' class='view_input' maxlength='11' placeholder='请输入新手机号码' data-type='mobile' bindinput='onInputChangeListener'></input>
+        </view>
+        <view class='view_line_h' style='margin-top:0px;'></view>
+        <view class='view_item_root'>
+          
+            <input type='text' class='view_input ' placeholder='请输入手机验证码' data-type='code' bindinput='onInputChangeListener'></input>
+            <view class='view_validate_code' bindtap='onGetValidateCode'>{{validateText}}</view>
+        </view>
+         <view class='view_line_h' style='margin-top:0px;'></view>
+    </view>
+
+    
+    <view class='view_default_btn' bindtap='onNextListener'>提交</view>
+</view>

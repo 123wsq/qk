@@ -1,0 +1,24 @@
+<!--pages/tab/Page_Business_Accept/Page_Business_Accept.wxml-->
+<view class='root_view'>
+    <image src='/images/image_business_accept_background.png' style='margin-top:50px;width:{{imageWidth}}px; height:{{imageHeight}}px;'></image>
+
+
+    <view class='background_style' >
+       
+        <view class='accept_camera'  bindtap='onScanQRcodeClickListner'>
+            <image src='/images/image_scan_qrcode.png' mode='aspectFit' style='width:30px; height:30px;'></image>
+            <text class='text_btn_default' style='color:#FFF;margin-left:10px;'>二维码识别</text>
+        </view>
+        
+        <view class='accept_camera_capacity' style='width:80%; margin-top:20px;' bindtap='onAddBusinessClickListener'>
+            <image src='/images/image_write_business.png' mode='aspectFit' style='width:30px; height:30px;'></image>
+            <text class='text_btn_default' style='color:#f4c322;margin-left:10px; '>手动录入名片</text>
+        </view>
+        
+         <view class='accept_camera_capacity'  bindtap='onCameraDiscernClickListner'>
+            <image src='/images/image_camera_business.png' mode='aspectFit' style='width:30px; height:30px;'></image>
+            <text class='text_btn_default' style='color:#f4c322; margin-left:10px;'>智能拍照识别</text>
+        </view>
+    </view>
+     
+</view>

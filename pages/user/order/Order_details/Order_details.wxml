@@ -1,0 +1,140 @@
+<!--pages/user/order/Order_details/Order_details.wxml-->
+<view style='background:#F8F8F8;'>
+    <view>
+        <view style='margin-top:10px; display:flex;'>
+            <view style='background-color: #27b6e2; width:5px; height:25px;'></view>
+            <text style='font-size:15px; margin-left:20px;'>开通{{vip_Data.name}}VIP</text>
+        </view>
+        <view style='margin-left:20px; margin-right:20px;'>
+            <text style='font-size: 14px;'>{{vip_Data.description}}</text>
+        </view>
+    </view>
+    <view>
+
+        <view class='view_horizontal' style='margin-top:20px;'>
+            <view>
+                <text class='text_default' >商品详情</text>
+            </view>
+            <view style='width: 40px; height:40px; display: flex;align-items: center;justify-content: center;' data-state='{{isShowGoodDetails}}' bindtap='onNextClickListener'>
+                <image src='{{img_next}}' class='image_small' ></image>
+            </view>
+        </view>
+        <view class='view_line'></view>
+        <block wx:if='{{isShowGoodDetails}}'>
+            <view>
+                <view class='view_horizontal' style='height:60px;'>
+
+                    <view>
+                        <image src='{{"/images/im_vip_level_"+curVipLevel+".png"}}' style='width:80px; height:40px;'></image>
+                    </view>
+                    <view>
+                        <text class='text_default'>{{vip_Data.total_fee_first_year}}元/年</text>
+                    </view>
+                </view>
+                <view class='view_line'></view>
+                <view  class='view_horizontal'>
+                    <view>
+                        <text class='text_default'>订单号</text>
+                    </view>
+                    <view>
+                        <text class='text_default'>{{vip_Data.order_no}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <block wx:if='{{vip_Data.id == 1 }}'>
+        <view  style='margin-top:20px;'>
+            <view class='view_horizontal'>
+                <view>
+                    <text  class='text_default'>普通版会员费</text>
+                </view>
+                <view  class='text_default'>
+                    <text  class='text_default'>￥{{vip_Data.price_renew}}</text>
+                </view>
+            </view>
+            <view class='view_line'></view>
+        </view>
+    </block>
+    <block wx:if='{{vip_Data.id != 1}}'>
+        <view>
+        
+            <view class='view_horizontal'>
+                <view>
+                    <text  class='text_default'>{{vip_Data.extra_name}}</text>
+                </view>
+                <view  class='text_default'>
+                    <text  class='text_default'>￥{{vip_Data.extra_fee}}</text>
+                </view>
+            </view>
+            <view class='view_line'></view>
+        
+        </view>
+        <view>
+        
+            <view class='view_horizontal'>
+                <view>
+                    <text  class='text_default'>服务年费</text>
+                </view>
+                <view  class='text_default'>
+                    <text  class='text_default'>￥{{vip_Data.price_first_year}}</text>
+                </view>
+            </view>
+            <view class='view_line'></view>
+        
+        </view>
+    </block>
+    <block wx:if='{{vip_Data.id ==6}}'>
+        <view>
+            <view class='view_horizontal'>
+                <view>
+                    <text  class='text_default'>{{vip_Data.website_tip}}</text>
+                </view>
+                <view  class='text_default'>
+                    <text  class='text_default'>￥{{vip_Data.website_fee}}</text>
+                </view>
+            </view>
+            <view class='view_line'></view>
+        
+        </view>
+    </block>
+    <view wx:if='{{vip_Data.id ==6}}'>
+        <view class='view_horizontal'>
+            <view>
+                <text  class='text_default'>商品总价</text>
+            </view>
+            <view  class='text_default'>
+                <text  class='text_default'>￥{{totalAmount}}</text>
+            </view>
+        </view>
+        <view class='view_line'></view>
+    </view>
+    <view>
+        <view class='view_horizontal'>
+            <view>
+            </view>
+            <view  class='text_default'>
+                <text  class='text_default' style='color:{{vip_Data.id < 3?"#f4c322":"#27b6e2" }}'>合计：￥{{vip_Data.total_fee_first_year}}</text>
+            </view>
+        </view>
+        <view class='view_line'></view>
+    </view>
+
+    <view >
+    </view>
+    
+
+    <view   style='position: fixed; bottom:0px; background-color:#fff; width:100%;'>
+        <view>
+            <view  class='view_horizontal' style='padding-right:0px;'>
+                <view>
+                    <text class='text_default'>付款</text>
+                    <text style='font-size:18px; color:{{curVipLevel < 2? "#f4c322":"#27b6e2"}};' decode='{{true}}'>￥{{vip_Data.total_fee_first_year}}</text>
+                </view>
+                <view style='background-color:#27b6e2; height:50px; width:100px;' class='view_v_h_center' bindtap='onPayClickListener'>
+                    <text style='color:#fff; font-size:16px;'>去支付</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

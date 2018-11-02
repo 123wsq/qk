@@ -1,0 +1,94 @@
+<!--pages/tab/Page_Business_Pkg/Page_Business_Pkg.wxml-->
+
+<view  class='view_root'>
+    <view class='view_title'>
+        <view class='title_input'>
+            <input type='text' bindinput='onInputChangeListener' placeholder='请输入名字拼音、简拼、汉字' style='font-size:14px; padding-left:10px;height:40px;'></input>
+        </view>
+        <view bindtap='onCameraDiscernClickListner' hidden>
+            <image src='/images/image_camera_scan_icon.png' class='image_small' style='margin-left:10px; width:25px;'></image>
+        </view>
+    </view>
+    <view class='view_line' style='margin-top:10px;'></view>
+    <view class='view_content'>
+            <view class='view_left'>
+            <scroll-view scroll-y='true' style='height:{{scroolHeight}}px;' scroll-top='{{scrollPosition}}'>
+                <block wx:for='{{constantData}}' wx:key='' wx:for-index='groupIndex'>
+                    <block wx:for='{{item}}' wx:key='' wx:for-index='index' wx:for-item='gridData'>
+                       
+                        <view >
+
+                            <block wx:if='{{index== 0}}'>
+                                <view class='view_group_item'>
+                                    <image src='{{groupIndex == 0 ?"/images/image_tbgz_icon.png":"/images/image_my_collect_icon.png" }}' class='image_small'></image>
+                                    <text class='text_default' style='padding-left:10px; font-size:15px;'>{{groupIndex == 0 ?"特别关注":"我的收藏" }}</text>
+                                </view>
+                                <view class='view_line'></view>
+                            </block>
+                            
+                            <block wx:if='{{index ==0 || gridData.initials != item[index-1].initials}}'>
+                                <view class='view_title_item'>
+                                    <text style='font-size:14px;'>{{gridData.initials}}</text>
+                                </view>
+                                
+                            </block>
+                            <view class='view_item'>
+                                <view class='view_item_top' style='width:{{horizontalWidth}}px;padding-left: 20px;'data-grid='{{gridData}}' bindtap='onItemClickListener'    data-id='{{gridData.id}}' animation='{{gridData.animation}}' bindtouchstart='onTouchStartListener' bindtouchmove='onTouchMoveListener' bindtouchend='onTouchEndListener'>
+                                    <view class='view_family'>
+                                            {{gridData.family}}
+                                    </view>
+                                    <view class='view_contact_detais'>
+                                        <view>
+                                            <text style='font-size:16px;'>{{gridData.search_start}}</text>
+                                            <text style='font-size:16px;color:#27b6e2;'>{{gridData.search_center}}</text>
+                                            <text style='font-size:16px;'>{{gridData.search_end}}</text>
+                                            
+                                            <text style='font-size:12px; margin-left:20px;'>{{gridData.position}}</text>
+                                        </view>
+                                        <view>
+                                            <text style='font-size:12px;'>{{gridData.firm_name}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class='view_item_down'>
+                                    <view class='swip_menu' style='background-color:#c8c7cd;' data-type='{{[0,groupIndex, index]}}' bindtap='onClickMenuListener'>
+                                        <text style='color:#FFF; font-size:{{gridData.type==2? 12:16}}px;'>{{gridData.type==2 ? '取消置顶':'置顶'}}</text>
+                                    </view>
+                                    <view class='swip_menu' style='background-color:#27b6e2;' data-type='{{[1,groupIndex, index]}}' bindtap='onClickMenuListener'>
+                                        <text style='color:#FFF; font-size:16px;'>编辑</text>
+                                    </view>
+                                    <view class='swip_menu' style='background-color:#FF0000;' data-type='{{[2,groupIndex, index]}}' bindtap='onClickMenuListener'>
+                                        <text style='color:#FFF; font-size:16px;'>删除</text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class='view_line'></view>
+                        </view>
+                           
+                    </block>
+                </block>
+                <block wx:if='{{constantData[0].length ==0 && constantData[1].length ==0}}'>
+                    <view class='view_not_data'>
+                        <image src='/images/image_not_data_icon.png' style='width:70px; height:70px;margin-top:30px;'></image>
+                        <text style='font-size:16px; margin-top:20px;'>暂无数据！</text>
+                    </view>
+                </block>
+                </scroll-view>
+            </view>
+        
+        <view class='view_right' style='height:{{isAndroid ? scroolHeight -30: scroolHeight}}px;'  bindtouchstart="onStartTouchListener"
+      bindtouchend="onEndTouchListener" catchtouchmove="onMoveTouchListener">
+        <view class="letters" wx:for="{{sideBar}}" wx:key="item">
+            <view  data-hash="{{item}}" data-id='{{index}}' style='color:#FFF; font-size:11px;'  bindtouchstart='onStartTouchIndexListener'
+              bindtouchend="onEndTouchIndexListener" bindtap='onClickIndexListener'>
+                {{item}}
+            </view>
+        </view>
+        </view>
+    </view>
+
+</view>
+<!--选择显示-->
+<view hidden="{{hiddenIndexDialog}}" class="showIndex">
+  {{showwords}}
+</view>

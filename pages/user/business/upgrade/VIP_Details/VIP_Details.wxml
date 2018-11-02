@@ -1,0 +1,42 @@
+<!--pages/user/business/upgrade/VIP_Details/VIP_Details.wxml-->
+<view class='vip_layout_root'>
+
+    <view  style='background-image:url({{imagePath+(vip_level < 3 ? "im_bkgtitle_orange.png":"im_bkgtitle_blue.png")}}); width:100%;'>
+        <view class='vip_background' >
+            <text class='text_top_name'>{{(vip_level < 3 ?"个人":"企业")+curPageData.name}}</text>
+            <view style='width:50px; height:3px; background-color: {{vip_level < 3 ?"#f4c322":"#27b6e2"}}; margin-top: 5px;'></view>
+            <block wx:if='{{vip_level == 1}}'>
+                <text class='text_top_name'>服务价格{{curPageData.total_fee_first_year}}元/年</text>
+            </block>
+            <block wx:if='{{vip_level > 1 && vip_level <6}}'>
+                <text class='text_top_name'>{{curPageData.price_first_year}}元/年+{{curPageData.extra_fee +curPageData.extra_name}}</text>
+            </block>
+            <block wx:if='{{vip_level ==6}}'>
+                <text class='text_top_name'>企业高级版电子名片{{curPageData.price_renew}}元/年</text>
+                <text class='text_top_name'>+企业官网标准版{{curPageData.website_fee}}元</text>
+            </block>
+            
+            <text  wx:if='{{vip_level !=6}}' class='text_top_name'>次年起价格{{curPageData.total_fee_renew}}元/年</text>
+        </view>
+    </view>
+    <text class='text_name'>服务清单</text>
+    
+    <view style='width:50px; height:3px; background-color: {{vip_level < 3 ? "#f4c322":"#27b6e2"}}; margin-top: 5px;'></view>
+   
+    <view style='width:100%; height: 1px; background-color:#E2E2E3; margin-top: 10px;'></view>
+    <view style='width:100%;'>
+        <view class='view_horizontal' wx:for='{{item_array}}' wx:for-index='columns' wx:key='' style='padding-left：0px;'>
+        
+            <view wx:for='{{item}}' wx:key='' wx:for-item='gridData' style='{{columns.length ==2 ?"width:50%;":"width:100%;"}}'>
+                <view class='view_item_right'>
+                <image src='{{gridData.pic}}' class='image_small'></image>
+                <text class='text_min' style='margin-left:10px;'>{{gridData.name}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='{{vip_level < 3 ?"view_btn_per":"view_btn_company"}}' bindtap='onClickDredgeListener'>
+        <text class='btn_dredge'>立即开通</text>
+    </view>
+    
+</view>

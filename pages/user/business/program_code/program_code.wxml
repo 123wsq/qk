@@ -1,0 +1,23 @@
+<!--pages/user/business/program_code/program_code.wxml-->
+<view class='background'>
+  
+    <view style='display: flex;flex-direction: row; margin-top:20px;'>
+        <image src='{{avatar}}' class='business_header'></image>
+        <view class='view_style'>
+            <view>
+                <text style='font-size:18px; color:#383838;'>{{name}}</text>
+                <text style='font-size:15px;color:#b5b5b5;margin-left:20px;' >{{position}}</text>
+            </view> 
+            <text style='color:#4e4e4e;font-size:14px;'>{{firm_name}}</text>
+        </view>
+    </view>
+    <view class='view_line' style='margin-top:20px;'></view>
+
+    <image src='{{smallImage}}' style='width:{{imageWidth}}px; height:{{imageHeight}}px;margin-top:40px;'></image>
+    <view class='view_line' style='margin-top:20px;'></view>
+    <text class='text_default' style='margin-top:20px;'>此名片码可印在</text>
+    <text style='color:#ffcd36; font-size:16px;'>纸质名片、宣传单、海报、易拉宝等宣传册上</text>
+
+    
+</view>
+<view class='save_Native' bindtap='onSaveNativeListener'>保存小程序码到手机</view>

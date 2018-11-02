@@ -1,0 +1,48 @@
+<!--pages/user/business/upgrade/Warm_Prompt/Warm_Prompt.wxml-->
+
+<view>
+    <view style='margin-top: 10px; margin-left:20px; margin-right: 20px;'>
+        <text class='text_font' decode='true'>请您准备个人资料与信息，包括姓名、电话、邮箱、地址、公司名称、公司官网以及公司介绍信息等。
+        <br/>我们的项目工作人员会在一个工作日内与您取得联系。请保持联系方式畅通，谢谢！</text>
+    </view>
+    <view style='margin-top:20px' class='text_item'>
+        <text style=' font-size:14px; color:#e78513; width: 20%;'>客服电话:</text>
+        <text style='margin-left:20px; font-size:14px; color:#e78513'>0532-67756180</text>
+    </view>
+    <view style='margin-top:10px' class='text_item'>
+        <text style=' font-size:14px; color:#e78513; width: 20%;'>工作时间:</text>
+        <text style='margin-left:20px; font-size:14px; color:#e78513'>8:30-17:00</text>
+    </view>
+
+    <view>
+        <view class='text_item' style='margin-top:40px;'>
+            <text style='font-size:14px; color:#333; width: 80px;' decode='{{true}}'>姓&nbsp;&nbsp;名</text>
+            <image src='/images/image_important.png' style='width:15px; height:10px; margin-left:20px;'></image>
+            <input type='text' bindinput='onInputListener' class='inupt_edit' data-name='userName'></input>
+        </view>
+        <view class='text_item' style='margin-top:10px;'>
+            <text style='font-size:14px; color:#333; width: 80px;' decode='{{true}}'>手&nbsp;&nbsp;机</text>
+            <image src='/images/image_important.png' style='width:15px; height:10px; margin-left:20px;'></image>
+            <input type='number' bindinput='onInputListener' class='inupt_edit' data-name='mobile'></input>
+        </view>
+        <view  class='text_item' style='margin-top:10px;'>
+            <text style='font-size:14px; color:#333; width: 80px;' decode='{{true}}'>授权码</text>
+            <input type='text' bindinput='onInputListener' class='inupt_edit' data-name='authCode' style='margin-left:50px;'></input>
+        </view >
+        <view style='margin-top:30px;'>
+            <checkbox-group  bindchange='onStateChangeListener'>
+            <checkbox  style='margin-left:30px;color:#898989; font-size:14px;' value='1' checked='{{protocolState}}'>
+                已阅读并同意以下协议
+            </checkbox>
+                
+            </checkbox-group>
+                <text class='text_font' style='margin-left:50px;' bindtap='onClickProtocolListener'>{{'<<企酷100定制产品服务协议>>'}}</text>
+        </view >
+
+    </view>
+    <view class='view_v_h_center'>
+        <view class='view_default_btn' bindtap='onSubmitListener'>
+            <text class='text_btn_default'>提交</text>
+        </view>
+        </view>
+</view>

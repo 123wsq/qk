@@ -1,0 +1,35 @@
+/* pages/user/business/program_code/program_code.wxss */
+.background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.save_Native{
+    height: 40px;
+    width: 80%;
+    background-color: #ffcd36;
+    font-size: 15px;
+    color: #FFF; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    margin-bottom: 40px;
+}
+.view_style{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.business_header{
+    width:50px;
+    height:50px;
+    border-radius: 25px;
+    border-width: 1.5px;
+    border-color: #c2c2c2;
+    border-style: solid;
+}

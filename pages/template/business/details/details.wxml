@@ -1,0 +1,69 @@
+<!--pages/template/business/details/details.wxml-->
+<template name='business_details'>
+    <view class='view_content'>
+        <!--显示头部的背景-->
+        <image src='{{item.template_background_top}}' style='width:100%; height:230px;' mode='scaleToFill' lazy-load></image>
+        <!--显示用户名和职务-->
+        <view id='content{{index}}' data-index='{{index}}' style='{{item.curHeight ==-1 ?"": ("height:"+item.curHeight+"px;") }}'>
+
+            <view class='view_h_center'>
+                <text style='font-size:17px;'>{{item.name}}</text>
+                <block wx:if='{{item.position != null}}'>
+                    <text class='text_min' decode='true'>&nbsp;&nbsp;|&nbsp;&nbsp;{{item.position}}</text>
+                </block>
+            </view>
+            <!--检查用户手机号码-->
+            <block wx:if='{{item.phone != null}}'>
+                <view class='view_card_info_root'>
+                    <text class='left_text'>手机</text>
+                    <image src='/images/image_mobile_icon.png' mode='aspectFit' class='center_image'></image>
+                    <text class='right_text' data-type='phone' data-data='{{item.phone}}' bindtap='onEventClick'>{{item.phone}}</text>
+                </view>
+            </block>
+            <!--检查用户邮箱-->
+            <block wx:if='{{item.email != null}}'>
+                <view class='view_card_info_root'>
+                    <text class='left_text'>邮箱</text>
+                    <image src='/images/image_email_icon.png' mode='aspectFit' class='center_image'></image>
+                    <text class='right_text' data-type='email' data-data='{{item.email}}' bindtap='onEventClick'>{{item.email}}</text>
+                </view>
+            </block>
+            <!--检查用户地址-->
+            <block wx:if='{{item.firm_add != null}}'>
+                <view class='view_card_info_root'>
+                    <text class='left_text'>地址</text>
+                    <image src='/images/image_address_icon.png' mode='aspectFit' class='center_image'></image>
+                    <text class='right_text' data-type='firm_add' data-data='{{item.firm_add}}' bindtap='onEventClick'>{{item.firm_add}}</text>
+                </view>
+            </block>
+            <!--检查用户公司-->
+            <block wx:if='{{item.firm_add != null}}'>
+                <view class='view_card_info_root'>
+                    <text class='left_text'>公司</text>
+                    <image src='/images/image_company_icon.png' mode='aspectFit' class='center_image'></image>
+                    <text class='right_text'>{{item.firm_name}}</text>
+                </view>
+            </block>
+            <!--根据name_url 遍历显示的名片url地址-->
+            <block wx:if='{{item.name_url.length >0}}'>
+                <view wx:for='{{item.name_url}}' wx:key='' wx:for-item='child' class='view_card_info_root'>
+                    
+                    <block wx:if='{{child.type ==1}}'>
+                        <text class='left_text'>官网</text>
+                        <image src='/images/image_business_icon.png' mode='aspectFit' class='center_image'></image>
+                    </block>
+                    <block wx:elif='{{child.type == 2}}'>
+                        <text class='left_text'>商城</text>
+                        <image src='/images/image_shop_icon.png' mode='aspectFit' class='center_image'></image>
+                    </block>
+                    <block wx:else>
+                        <text class='left_text'>其他</text>
+                        <image src='/images/image_other_icon.png' mode='aspectFit' class='center_image'></image>
+                    </block>
+                    <text class='right_text'>{{child.name}}</text>
+                </view>
+            </block>
+        </view>
+        <image src='{{item.template_background_foot}}' lazy-load style='width:100%;height:70px;' mode='scaleToFill'></image>
+    </view>
+</template>

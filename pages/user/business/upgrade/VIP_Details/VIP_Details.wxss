@@ -1,0 +1,63 @@
+/* pages/user/business/upgrade/VIP_Details/VIP_Details.wxss */
+.vip_layout_root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vip_background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}
+
+.text_top_name {
+  font-size: 15px;
+  color: #FFF;
+  margin-top: 10px;
+}
+.text_name {
+  font-size: 15px;
+  color: #333;
+  margin-top: 20px;
+}
+.vip_dredge_root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view_btn_company{
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(to right, #008db9,#23b1de);
+    border-radius: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view_btn_per{
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(to right, #e78513,#f3bd1e);
+    border-radius: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_dredge{
+    font-size: 12px;
+    color: #FFF;
+}
+.tab_root{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.view_item_right {
+    width: 100%;
+}

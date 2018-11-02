@@ -1,0 +1,12 @@
+<!--pages/system/Takepictrue/Takepictrue.wxml-->
+<view>
+    <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 100%;">
+    
+    </camera>
+</view>
+<view style='position: fixed; bottom:0px; background-color:#0ff; width:100%; height:80px;' class='view_v_h_center'>
+    <view bindtap='onTakePictureListener'>
+        <text>拍照</text>
+    </view>
+    
+</view>

@@ -1,0 +1,9 @@
+<!--pages/user/business/preview/Preview_business/Preview_business.wxml-->
+  <view class='scanner'>
+    <canvas canvas-id="photo_canvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;position: absolute;"></canvas>
+
+    <view class="buttons">
+      <view class="choose" bindtap="onClickListener" data-type='1' style='color:#ffcd36;'>重新拍照</view>
+      <view class="confirm" bindtap="onClickListener" data-type='2' style='color:#ffcd36;'>开始识别</view>
+    </view>
+  </view>

@@ -1,0 +1,3 @@
+<!--pages/user/web/Web_view/Web_view.wxml-->
+<web-view src='{{requestUrl}}'>
+</web-view>

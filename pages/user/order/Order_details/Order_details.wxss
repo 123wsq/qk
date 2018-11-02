@@ -1,0 +1,9 @@
+/* pages/user/order/Order_details/Order_details.wxss */
+
+
+.take_view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

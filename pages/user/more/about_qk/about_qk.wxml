@@ -1,0 +1,35 @@
+<!--pages/user/more/about_qk/about_qk.wxml-->
+<view>
+    
+    <image src='/images/image_about_banner.jpg' lazy-load style='width:100%;height:180px; ' mode='scaleToFill' ></image>
+    <view style='height:190px; margin:10px;'>
+        <image  src='/images/image_about_border.png' lazy-load style='position: absolute; width:95%; height:190px;'></image>
+        <view style='height:10px;'></view>
+        <view style='display: flex;flex-direction: row; margin-left:10px;' >  
+            <view style='width:5px; height:20px; background-color: #f4c322;'></view>
+            <text class='text_default' style='margin-left:10px; '>企酷100是以人工智能为基础的公共信息发布平台，围绕企业宣传、商品批发、渠道建设和人才招聘提供专业的信息发布、信息推广、搜索引擎服务。</text>
+        </view>
+        <image src='/images/image_about_t1.png' lazy-load style='margin-left:10px;' mode='widthFix'></image>
+    </view>
+
+    <view style='margin:10px; height:190px;'>
+        <image  src='/images/image_about_border.png'lazy-load  style='position: absolute; width:95%; height:190px;'></image>
+        <view style='height:10px;'></view>
+        <view style='display: flex;flex-direction: row; margin-left:10px;' >  
+            <view style='width:5px; height:20px; background-color: #f4c322;'></view>
+            <text class='text_default' style='margin-left:10px;margin-right:10px;'>企酷100以“让企业低成本发布信息，让用户零风险获取信息”为己任，秉承“用户需求为第一需求”的服务理念，坚持技术创新，降低企业互联网信息发布及推广成本，保障用户信息安全。</text>
+        </view>
+        <image src='/images/image_about_t2.png' lazy-load style='margin-left:10px;' mode='widthFix'></image>
+    </view>
+    <view style='margin:10px; height:175px;'>
+        <image  src='/images/image_about_border.png' lazy-load style='position: absolute; width:95%; height:175px;'></image>
+        <view style='height:10px;'></view>
+        <view style='display: flex;flex-direction: row; margin-left:10px;' >  
+            <view style='width:5px; height:20px; background-color: #f4c322;'></view>
+            <text class='text_default' style='margin-left:10px;margin-right:10px;'>企酷100采用智能化发布技术，所有信息发布基于人工智能算法，有效降低信息污染，提升公共区域信息呈现的公平公正性。</text>
+        </view>
+        <image src='/images/image_about_t3.png' lazy-load style='margin-left:10px;' mode='widthFix'></image>
+    </view>
+    <image src='/images/image_about_footer.jpg' lazy-load  style='width:100%; height:150px;' mode='scaleToFill' ></image>
+</view>
+

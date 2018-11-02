@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <image src='/images/image_wechat_auth_icon.png' style='width:60px; height:60px;'></image>
+    </view>
+    <view class='content'>
+        <view style='font-size:16px;'>申请获取以下权限</view>
+        <text style='font-size:16px;'>获得你的公开信息(昵称，头像等)</text>
+    </view>
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo" style='font-size:16px; height:40px; background-color:#50b674;'>
+        授权登录
+    </button>
+</view>
+<view wx:else>请升级微信版本</view>
+
+<view class="zan-dialog--show"  wx:if="{{showNumber}}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+        <view class="zan-dialog__container">
+            <view class="modal-title">绑定手机号码</view>
+            <view class="modal-content">
+                <text style='font-size:14px;'>为了更好地为您提供电子名片服务，首次登陆我们需要获取您的手机号码。</text>
+            </view>
+            <view class="modal-footer">
+                <view class="btn-cancel" bindtap="onDialogClickListener" data-status="0">取消</view>
+                <button class="btn_border btn-confirm " open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" data-status="1">确定</button>
+            </view>
+        </view>
+</view>
+<view class="zan-dialog--show"  wx:if="{{showManualNumber}}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+        <view class="zan-dialog__container">
+            <view class="modal-title">绑定手机号码</view>
+            <view class='number_item' style='margin-top:10px;'>
+                <input  class='input' type='number' maxlength='11' placeholder='请输入手机号码' bindinput='onInputMobileListener'></input>
+            </view>
+            <view class='number_item'>
+                <input class='input' type='number' maxlength='4' placeholder='请输入验证码' bindinput='onInputCodeListener'></input>
+                <view style='width:80px;' bindtap='onGetValidateClickListener'>
+                    <text class='text_default'>{{validateMsg}}</text>
+                </view>
+                
+            </view>
+            <view class="modal-footer" style='margin-top:20px;'>
+                <view class="btn-cancel" bindtap="onDialogClickListener" data-status="0">取消</view>
+                <view class="btn-confirm " bindtap='onSubmitBindingNumberListener' data-status="1">确定</view>
+            </view>
+        </view>
+</view>

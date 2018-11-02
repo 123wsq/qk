@@ -1,0 +1,162 @@
+/**index.wxss**/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 80%;
+  height:180px;
+  overflow: hidden;
+  position: fixed;
+  top: 35%;
+  left: 10%;
+  z-index: 9999;
+  background: #fFF;
+  border-radius: 36rpx;
+  border: 1px solid #f9f9f9;
+}
+
+.modal-title {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 20px;
+  height:65px;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  align-items: center;
+}
+.number_item {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.input {
+    flex: 1;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+.btn_border::after{
+    border:0;
+}
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+  border-bottom-right-radius: 36rpx;
+  background-color: #fff;
+}
+.zan-dialog__container {
+  position: fixed;
+  top: 40%;
+  left:10%;
+  width: 80%;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 36rpx;
+  border: 1px solid #f9f9f9;
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}

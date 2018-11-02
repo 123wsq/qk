@@ -1,0 +1,83 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.1",
+	"appid": "wx1075d48e5be96e86",
+	"projectname": "qk",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "名片识别",
+					"pathName": "pages/tab/Page_Business_Accept/Page_Business_Accept",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "修改手机号码",
+					"pathName": "pages/user/more/validate_mobile/validate_mobile",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "更多",
+					"pathName": "pages/tab/Page_More/Page_More",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "名片识别",
+					"pathName": "pages/user/business/edit/Edit_Business/Edit_Business",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "登录",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地图",
+					"pathName": "pages/user/map_view/map_view",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "小程序码",
+					"pathName": "pages/index/index",
+					"query": "scene=1292_"
+				}
+			]
+		}
+	}
+}

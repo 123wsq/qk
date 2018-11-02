@@ -1,0 +1,109 @@
+/* pages/tab/Page_Business_List/Page_Business_List.wxss */
+
+.item_background{
+    flex: 1;
+    border-radius: 5px;
+    border: 1px solid hsl(230, 16%, 93%);
+    background-color: #F8F8F8;
+    box-shadow: 5px 5px 5px #FAAA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+.item_left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+.item_right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item_default_version{
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    border: 1px solid #dddddd;
+    height: 25px;
+    width: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+.item_text_default {
+    color: #c2c2c2;
+    font-size: 12px;
+}
+.item_vip_version{
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    border: 1px solid #f4c322;
+    height: 25px;
+    width: 50px;
+    text-align: center;
+    margin-top: 10px;
+}
+.item_text_vip {
+    color: #f4c322;
+    font-size: 12px;
+}
+.view_item_edit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.showModule {
+/* 用样式控制隐藏 visibility: hidden;*//* flex 布局 */
+display: flex;
+flex-direction: column;
+/* 生成绝对定位的元素，相对于浏览器窗口进行定位 */
+position: fixed;
+/* 如果 height,width 不变的情况下，left,top 不用修改 */
+left: 10%;
+bottom: 15%;
+height: 70vh;
+width: 80vw;
+/* 不透明 */
+opacity:1;
+background-color: #3B3B3B;
+/* 圆角 */
+border-radius: 30rpx;
+z-index: 3001; 
+}
+.module_v{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+.btn_view_root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_business {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #B0B0B2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.business_header{
+    width:50px;
+    height:50px;
+    border-radius: 25px;
+    border-width: 1.5px;
+    border-color: #c2c2c2;
+    border-style: solid;
+}
+

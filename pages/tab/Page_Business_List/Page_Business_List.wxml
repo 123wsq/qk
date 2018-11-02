@@ -1,0 +1,68 @@
+<!--pages/tab/Page_Business_List/Page_Business_List.wxml-->
+<view>
+    <block wx:for='{{itemData}}' wx:key=''>
+        <view class='item_background' data-index='{{index}}' bindtap='onItemClickListener'>
+            <view class='item_left'> 
+                    <text style='font-size:14px; color:#8d8d95;'>{{item.firm_name}}</text>
+                    <view style='margin-top:15px; align-items: center;'>
+                        <text style='font-size:18px;color:#696969;'>{{item.name}}</text>
+                        <text style='font-size:11px;margin-top:5px;color:#4b4b4b;' decode='true'>{{(item.position== null ||item.position== "") ? "":"&nbsp;&nbsp;|&nbsp;&nbsp;"+item.position}}</text>
+                    </view>
+                    <text style='font-size:12px;margin-top:15px;color:#8a8a8c;'>{{item.phone}}</text>
+                    <text style='font-size:12px;margin-top:5px;color:#929395;'>{{item.email}}</text>
+                    <text style='font-size:12px;margin-top:5px;color:#929395;'>{{item.firm_add}}</text>
+                    <view class='view_item_edit' >
+                        <text style='font-size:14px;margin-top:10px;color:#329d2b;'>No.{{index+1}}</text>
+                        <image src='/images/image_mini_program_icon.png' style='width:25px; height:25px; margin-left:20px;' catchtap='onShowProgramCode' data-index='{{index}}'></image> 
+                    </view>
+                    
+            </view>
+            <view class='item_right'> 
+                <image src='{{avatar !=null|| avatar !="" ? avatar : "/images/image_header_default.png"}}' class='business_header'></image>
+               
+                <block wx:if='{{item.custom_detail_url=="" || item.custom_detail_url==null}}'>
+                    <view class='item_default_version'>
+                        <text class='item_text_default'>普通版</text>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class='item_vip_version'>
+                        <text class='item_text_vip'>定制版</text>
+                    </view>
+                </block>
+                
+                <view class='view_item_edit'>
+                    
+                    <view style='color:#FF0000; font-size:14px; height:20px; width:30px;' data-index='{{index}}' catchtap='onDeleteBusiness'>
+                        <text>删除</text>
+                    </view>
+
+                    <view style='color:#27b6e2; font-size:14px; margin-left:10px;height:20px; width:30px;' data-index='{{index}}' catchtap='onEditBusiness'>
+                        <text>编辑</text>
+                    </view>
+                   
+                </view>
+                
+            </view>
+        </view>
+    </block>
+    <view class='btn_view_root'>
+        <view class='add_business' bindtap='onAddBusinessListener'>
+            <text style='color:#B0B0B2;'>添加名片</text>
+        </view>
+    </view>
+</view>
+<view class="showModule" wx:if="{{isShowMPCode}}" >
+    <view class='view_item_edit'>
+        <image src='{{avatar}}' style='width:40px; height:40px; border-radius:20px; margin-left:40px;'></image>
+        <view class='module_v'>
+            <text style='font-size:16px;color:#FFF;'>{{curName}}</text>
+            <text style='font-size:12px;color:#FFF; margin-top:5px;'>{{curFirmName}}</text>
+        </view>
+    </view>
+    <view style='margin-top:30px'>
+        <image src='/images/image_small_program_icon.jpg' style='width:{{screenWidth -40}}px; height:{{screenWidth-40}}px; margin-left:20px;border-radius: 10px;'></image>
+    </view>
+    
+    <text style='position: absolute; font-size:14px; color:#fff; right:10px; top:10px;' bindtap='onClickDialog'>关闭</text>
+</view>

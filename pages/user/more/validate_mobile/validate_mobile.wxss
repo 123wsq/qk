@@ -1,0 +1,46 @@
+
+.view_root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.view_grounp{
+    width: 80%;
+    border-radius: 10px;
+}
+.view_line_h{
+    width: 100%;
+    height: 1px;
+    background-color: #cbcbcb;
+    margin-top: 40px;
+}
+.view_line_v{
+    width: 1px;
+    height: 40px;
+    background-color: #cbcbcb;
+}
+.view_item_root{
+    width: auto;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+.view_left_text{
+    width: 80px;
+}
+.view_input{
+    flex: 1;
+    padding-left: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+   
+}
+.view_validate_code{
+    font-size: 12px;
+    margin-left: 10px;
+
+}

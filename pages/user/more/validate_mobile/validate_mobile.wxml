@@ -1,0 +1,18 @@
+<view class='view_root'>
+    <view class='view_grounp'>
+        <text style='font-size:13px; color:#8a8a8c'>注：更换手机号码后,在app端登录时需要使用新的手机号码。当前手机号码:{{showMobile}}</text>
+    </view>
+    
+   
+    <view class='view_grounp' >
+        <view class='view_line_h'></view>
+       
+        <view class='view_item_root'>
+            
+            <input type='text' class='view_input ' placeholder='请输入短信验证码' data-type='code' bindinput='onInputChangeListener'></input>
+            <view class='view_validate_code' bindtap='onGetValidateCode'>{{validateText}}</view>
+        </view>
+         <view class='view_line_h' style='margin-top:0px;'></view>
+    </view>
+    <view class='view_default_btn' bindtap='onNextListener'>下一步</view>
+</view>

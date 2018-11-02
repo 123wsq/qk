@@ -1,0 +1,72 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/tab/Page_Business_List/Page_Business_List",
+    "pages/tab/Page_Business_Pkg/Page_Business_Pkg",
+    "pages/tab/Page_Business_Accept/Page_Business_Accept",
+    "pages/tab/Page_More/Page_More",
+
+    "pages/user/business/edit/Edit_Business/Edit_Business",
+    "pages/user/business/upgrade/VIP_Level/VIP_Level",
+    "pages/user/business/upgrade/VIP_Details/VIP_Details",
+    "pages/user/business/upgrade/Warm_Prompt/Warm_Prompt",
+    "pages/user/business/details/Business_Details/Business_Details",
+    "pages/user/business/preview/Preview_business/Preview_business",
+    "pages/user/business/program_code/program_code",
+    "pages/user/order/Order_details/Order_details",
+    "pages/user/more/about_qk/about_qk",
+    "pages/user/more/validate_mobile/validate_mobile",
+    "pages/user/more/update_mobile/update_mobile",
+    "pages/user/web/Web_view/Web_view",
+    "pages/user/web/bridge_view/bridge_view",
+
+
+    
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "企酷100",
+    "navigationBarTextStyle":"black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+    },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ffcd36",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+        {
+            "pagePath": "pages/tab/Page_Business_Pkg/Page_Business_Pkg",
+            "selectedIconPath": "images/image_business_pkg_icon.png",
+            "iconPath": "images/image_business_pkg_icon.png",
+            "text": "名片夹"
+        },
+      {
+        "pagePath": "pages/tab/Page_Business_List/Page_Business_List",
+        "selectedIconPath": "images/image_my_business.png",
+        "iconPath": "images/image_my_business.png",
+        "text": "我的名片"
+      },
+      
+      {
+        "pagePath": "pages/tab/Page_Business_Accept/Page_Business_Accept",
+        "selectedIconPath": "images/image_business_accept_icon.png",
+        "iconPath": "images/image_business_accept_icon.png",
+        "text": "名片收纳"
+      },
+      {
+        "pagePath": "pages/tab/Page_More/Page_More",
+        "selectedIconPath": "images/image_more_icon.png",
+        "iconPath": "images/image_more_icon.png",
+        "text": "更多"
+      }
+    ]
+  }
+}
